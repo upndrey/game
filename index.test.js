@@ -1,5 +1,6 @@
 import {
-    generateStartMatrix
+    generateStartMatrix,
+    makeMove
 } from "./index.js";
 import { assert, expect, should } from 'chai';
 
@@ -24,3 +25,25 @@ describe("generateStartMatrix", function() {
     });
 });
 
+describe("makeMove", function() {
+    let matrix = generateStartMatrix();
+    let resultMatrix;;
+    let expectMatrix;
+    it("выполняет ход в заданную ячейку", function() {
+        resultMatrix = makeMove(matrix, 0, 0, 1);
+        expectMatrix = [
+            [1, null, null],
+            [null, null, null],
+            [null, null, null]
+        ]
+        expect(resultMatrix).to.deep.eql(expectMatrix);
+
+        resultMatrix = makeMove(matrix, 1, 1, 0);
+        expectMatrix = [
+            [null, null, null],
+            [null, 0, null],
+            [null, null, null]
+        ]
+        expect(resultMatrix).to.deep.eql(expectMatrix);
+    });
+});
