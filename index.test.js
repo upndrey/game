@@ -46,4 +46,15 @@ describe("makeMove", function() {
         ]
         expect(resultMatrix).to.deep.eql(expectMatrix);
     });
+    
+    it("ход может быть выполнен только в пустую ячейку", function() {
+        resultMatrix = makeMove(matrix, 0, 0, 1);
+        resultMatrix = makeMove(resultMatrix, 0, 0, 0);
+        expectMatrix = [
+            [1, null, null],
+            [null, null, null],
+            [null, null, null]
+        ]
+        expect(resultMatrix).to.deep.eql(expectMatrix);
+    });
 });
