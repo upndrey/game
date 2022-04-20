@@ -15,6 +15,7 @@ export function generateStartMatrix() {
  */
 export function makeMove(matrix, row, col, value) {
     let tempMatrix = JSON.parse(JSON.stringify(matrix));
-    tempMatrix[row][col] = value;
+    if(tempMatrix[row][col] === null)
+        tempMatrix[row][col] = value;
     return tempMatrix;
 }
