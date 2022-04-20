@@ -31,6 +31,49 @@ export function makeMove(matrix, row, col, value) {
  */
 export function isEndGame(matrix) {
     let result = 0;
-    // TODO
+    if(
+        matrix[0].every(elem => elem == 1) ||
+        matrix[1].every(elem => elem == 1) ||
+        matrix[2].every(elem => elem == 1) ||
+        matrix[0][0] == 1 &&
+        matrix[1][0] == 1 &&
+        matrix[2][0] == 1 ||
+        matrix[0][1] == 1 &&
+        matrix[1][1] == 1 &&
+        matrix[2][1] == 1 ||
+        matrix[0][2] == 1 &&
+        matrix[1][2] == 1 &&
+        matrix[2][2] == 1 ||
+        matrix[0][0] == 1 &&
+        matrix[1][1] == 1 &&
+        matrix[2][2] == 1 ||
+        matrix[0][2] == 1 &&
+        matrix[1][1] == 1 &&
+        matrix[2][0] == 1
+    )
+        result = 1;
+    else if(
+        matrix[0].every(elem => elem == 0) ||
+        matrix[1].every(elem => elem == 0) ||
+        matrix[2].every(elem => elem == 0) ||
+        matrix[0][0] == 0 &&
+        matrix[1][0] == 0 &&
+        matrix[2][0] == 0 ||
+        matrix[0][1] == 0 &&
+        matrix[1][1] == 0 &&
+        matrix[2][1] == 0 ||
+        matrix[0][2] == 0 &&
+        matrix[1][2] == 0 &&
+        matrix[2][2] == 0 ||
+        matrix[0][0] == 0 &&
+        matrix[1][1] == 0 &&
+        matrix[2][2] == 0 ||
+        matrix[0][2] == 0 &&
+        matrix[1][1] == 0 &&
+        matrix[2][0] == 0
+    )
+        result = 0;
+    else 
+        result = -2;
     return  result;
 }
