@@ -1,6 +1,7 @@
 export function generateStartMatrix() {
-    let matrix = [];
-
-    
-    return matrix;
+    return [
+        [null, null, null],
+        [null, null, null],
+        [null, null, null]
+    ];
 }

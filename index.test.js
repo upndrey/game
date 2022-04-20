@@ -1,4 +1,5 @@
 import {
+    generateStartMatrix
 } from "./index.js";
 import { assert, expect, should } from 'chai';
 
