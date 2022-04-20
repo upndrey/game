@@ -76,4 +76,22 @@ describe("isEndGame", function() {
         ]
         expect(isEndGame(matrix)).to.eql(0);
     });
+    
+    it("если не были выставлены 3 одинаковых значения в линию и ходы еще есть, то игра не закончилась", function() {
+        matrix = [
+            [1, 0, 1],
+            [0, null, null],
+            [null, 0, null]
+        ]
+        expect(isEndGame(matrix)).to.eql(-2);
+    });
+    
+    it("если не были выставлены 3 одинаковых значения в линию и ходов нет, то игра закончилась ничьей", function() {
+        matrix = [
+            [1, 0, 1],
+            [1, 0, 0],
+            [0, 1, 1]
+        ]
+        expect(isEndGame(matrix)).to.eql(-1);
+    });
 });
