@@ -19,3 +19,18 @@ export function makeMove(matrix, row, col, value) {
         tempMatrix[row][col] = value;
     return tempMatrix;
 }
+
+/**
+ * 
+ * @param {array} matrix 
+ * @returns {int}:
+ *  0 - выиграл нолик, 
+ *  1 - выиграл крестик, 
+ * -1 - ничья, 
+ * -2 - игра продолжается
+ */
+export function isEndGame(matrix) {
+    let result = 0;
+    // TODO
+    return  result;
+}

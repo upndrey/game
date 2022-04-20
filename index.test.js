@@ -1,6 +1,7 @@
 import {
     generateStartMatrix,
-    makeMove
+    makeMove,
+    isEndGame
 } from "./index.js";
 import { assert, expect, should } from 'chai';
 
@@ -56,5 +57,23 @@ describe("makeMove", function() {
             [null, null, null]
         ]
         expect(resultMatrix).to.deep.eql(expectMatrix);
+    });
+});
+
+describe("isEndGame", function() {
+    let matrix;
+    it("если были выставлены 3 одинаковых значения в линию, то соответствующий игрок победил", function() {
+        matrix = [
+            [1, 1, 1],
+            [0, null, null],
+            [null, 0, null]
+        ]
+        expect(isEndGame(matrix)).to.eql(1);
+        matrix = [
+            [0, 1, 1],
+            [null, 0, null],
+            [null, null, 0]
+        ]
+        expect(isEndGame(matrix)).to.eql(0);
     });
 });
