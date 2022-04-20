@@ -73,7 +73,13 @@ export function isEndGame(matrix) {
         matrix[2][0] == 0
     )
         result = 0;
-    else 
+    else if(
+        matrix[0].every(elem => elem != null) &&
+        matrix[1].every(elem => elem != null) &&
+        matrix[2].every(elem => elem != null)
+    )
+        result = -1;
+    else
         result = -2;
     return  result;
 }
